@@ -18,7 +18,7 @@ const Github = () => {
     <>
       <div className="flex items-center bg-slate-100 max-md:ml-10 max-md:mr-10 max-md:mt-28 max-md:mb-28 lg:mt-10 lg:mb-10 lg:ml-10 lg:mr-10 rounded-lg justify-center p-10 lg:gap-10 gap-4">
         <img
-          className="lg:size-64 rounded-full"
+          className="lg:size-64 max-md:size-24 rounded-full"
           src={data.avatar_url}
           alt="git profile pic"
         />

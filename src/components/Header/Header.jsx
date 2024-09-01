@@ -1,6 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
+import { IoMdMenu } from "react-icons/io";
+import { useState } from "react";
+
 
 export default function Header() {
+
+  const [btnValue, setbtnValue] = useState(false)
+
+  const toggleButton = () => {
+    setbtnValue(!btnValue)
+  }
+
   return (
     <header className="shadow sticky z-50 top-0">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -25,14 +35,16 @@ export default function Header() {
             >
               Get started
             </Link>
+            <IoMdMenu className="hidden max-md:flex" onClick={toggleButton} />
           </div>
           <div
-            className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+            className={`${btnValue ? 'flex': 'hidden'} max-md:text-center max-md:ml-[134px] max-md:mr-[134px] justify-between  items-center w-full lg:flex lg:w-auto lg:order-1`}
             id="mobile-menu-2"
           >
-            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0" onClick={toggleButton}>
               <li>
                 <NavLink
+                
                   to="/"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${
